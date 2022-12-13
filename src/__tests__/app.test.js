@@ -2,9 +2,7 @@ const { getCurrentMonth } = require("../app");
 const { isAdmin } = require("../app");
 const { isValidName } = require("../app");
 
-jest
-  .useFakeTimers()
-  .setSystemTime(new Date('2020-01-01'));
+jest.useFakeTimers().setSystemTime(new Date("2020-01-01"));
 
 describe("app tests suites - getCurrentMonth", () => {
     test("should return the current month", () => {
@@ -25,31 +23,18 @@ describe("app tests suites - isAdmin", () => {
     });
 });
 
-
 describe("app tests suites - isValidName", () => {
     test("should return a array without words with x or X", () => {
-        const noms = [
-            "Momo",
-            "xena",
-            "Hadji",
-            "Leo",
-            "JC",
-            "DMX",
-            "JeanKevin"
-        ];
+        const noms = ["Momo", "xena", "Hadji", "Leo", "JC", "DMX", "JeanKevin"];
         const result = isValidName(noms);
-        expect(result).toEqual(["Momo","Hadji","Leo","JC","JeanKevin"]);
+        expect(result).toEqual(["Momo", "Hadji", "Leo", "JC", "JeanKevin"]);
     });
 });
 
-
 describe("app tests suites - isValidName", () => {
     test("should return a array without words with x or X 2 ", () => {
-        const noms = [
-            "Momo",
-            "JeanKevin"
-        ];
+        const noms = ["Momo", "JeanKevin"];
         const result = isValidName(noms);
-        expect(result).toEqual(["Momo","JeanKevin"]);
+        expect(result).toEqual(["Momo", "JeanKevin"]);
     });
 });

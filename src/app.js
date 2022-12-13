@@ -24,14 +24,13 @@ const isAdmin = (userId) => userId === "admin" || userId === "sudo";
 const isValidName = (noms) => {
     const nomOk = [];
     for (const element of noms) {
-        if(!element.includes('x') && !element.includes('X')){
+        if (!element.includes("x") && !element.includes("X")) {
             nomOk.push(element);
         }
-      }
+    }
 
     return nomOk;
 };
-
 
 try {
     document.getElementById("month").innerText = getCurrentMonth();

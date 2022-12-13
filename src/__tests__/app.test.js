@@ -1,5 +1,6 @@
 const { getCurrentMonth } = require("../app");
 const { isAdmin } = require("../app");
+const { isValidName } = require("../app");
 
 jest
   .useFakeTimers()
@@ -21,5 +22,22 @@ describe("app tests suites - isAdmin", () => {
     test("should return true as user is admin", () => {
         const result = isAdmin("admin");
         expect(result).toBe(true);
+    });
+});
+
+
+describe("app tests suites - isValidName", () => {
+    test("should return a array without words with x or X", () => {
+        const noms = [
+            "Momo",
+            "xena",
+            "Hadji",
+            "Leo",
+            "JC",
+            "DMX",
+            "JeanKevin"
+        ];
+        const result = isValidName(noms);
+        expect(result).toStrictEqual(["Momo","Hadji","Leo","JC","JeanKevin"]);
     });
 });

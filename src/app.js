@@ -21,6 +21,18 @@ const getCurrentMonth = (date = new Date()) => {
 
 const isAdmin = (userId) => userId === "admin" || userId === "sudo";
 
+const isValidName = (noms) => {
+    const nomOk = [];
+    for (const element of noms) {
+        if(!element.includes('x') && !element.includes('X')){
+            nomOk.push(element);
+        }
+      }
+
+    return nomOk;
+};
+
+
 try {
     document.getElementById("month").innerText = getCurrentMonth();
 } catch (err) {
@@ -29,3 +41,4 @@ try {
 
 exports.getCurrentMonth = getCurrentMonth;
 exports.isAdmin = isAdmin;
+exports.isValidName = isValidName;

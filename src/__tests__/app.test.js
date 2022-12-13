@@ -38,6 +38,18 @@ describe("app tests suites - isValidName", () => {
             "JeanKevin"
         ];
         const result = isValidName(noms);
-        expect(result).toStrictEqual(["Momo","Hadji","Leo","JC","JeanKevin"]);
+        expect(result).toEqual(["Momo","Hadji","Leo","JC","JeanKevin"]);
+    });
+});
+
+
+describe("app tests suites - isValidName", () => {
+    test("should return a array without words with x or X 2 ", () => {
+        const noms = [
+            "Momo",
+            "JeanKevin"
+        ];
+        const result = isValidName(noms);
+        expect(result).toEqual(["Momo","JeanKevin"]);
     });
 });
